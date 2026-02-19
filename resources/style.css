@@ -36,6 +36,8 @@
 
 html {
     scroll-behavior: smooth;
+    color: white;
+    color-scheme: var(--dark-bg);
 }
 
 body {

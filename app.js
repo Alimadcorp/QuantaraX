@@ -371,7 +371,7 @@ function showModal(title, description, type) {
         <h3 style="color: var(--color-primary-purple); margin-bottom: 16px; font-size: 24px;">${title}</h3>
         <p style="color: var(--color-light-text); line-height: 1.6; margin-bottom: 24px; opacity: 0.9;">${description}</p>
         <button class="close-modal" style="
-            background: linear-gradient(45deg, var(--color-primary-purple), var(--color-primary-blue));
+            background: var(--color-sec-purple);
             border: none;
             padding: 12px 24px;
             border-radius: 8px;

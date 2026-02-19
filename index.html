@@ -14,7 +14,6 @@
     <meta property="og:description" content="Non-Profit Quantum Physics & Mechanics Community">
     <meta property="og:image" content="https://cdn.alimad.co/f/static/quantarax.jpeg">
 
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="quantarax.alimad.co">
     <meta property="twitter:url" content="https://quantarax.alimad.co/">
@@ -22,14 +21,15 @@
     <meta name="twitter:description" content="Non-Profit Quantum Physics & Mechanics Community">
     <meta name="twitter:image" content="https://cdn.alimad.co/f/static/quantarax.jpeg">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" herf="animation.css">
+    <link rel="stylesheet" href="animation.css">
     <link rel="icon" type="image/png" href="https://cdn.alimad.co/f/static/quantarax.jpeg">
     <link rel="apple-touch-icon" href="https://cdn.alimad.co/f/static/quantarax.jpeg">
-    <meta name="theme-color" content="#232133"> <!-- Updated theme color -->
+    <meta name="theme-color" content="#232133">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-    <!-- Loading Screen -->
+
     <div id="loading-screen" class="loading-screen">
         <div class="quantum-loader">
             <div class="quantum-particle"></div>
@@ -49,7 +49,6 @@
             <div class="binary-rain"></div>
         </div>
     </div>
-
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
@@ -60,26 +59,28 @@
                 </div>
                 <span class="brand-text">QuantaraX</span>
             </div>
-            <div class="nav-menu">
+            <div class="nav-menu" id="navMenu">
                 <a href="#about" class="nav-link" data-section="about">
                     <span class="binary-icon">01</span>About
                 </a>
                 <a href="#platform" class="nav-link" data-section="platform">
                     <span class="binary-icon">02</span>Platform
                 </a>
-                <a href="#leadership" class="nav-link" data-section="leadership">
-                    <span class="binary-icon">03</span>Leadership
+                <a href="credits.html" class="nav-link" data-section="leadership">
+                    <span class="binary-icon">03</span>Credits
                 </a>
                 <a href="#join" class="nav-link" data-section="join">
                     <span class="binary-icon">00</span>Join
                 </a>
             </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="main-content">
-        <!-- Hero Section -->
+
         <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">
@@ -87,28 +88,21 @@
                     <div class="title-effect"></div>
                 </h1>
                 <p class="hero-subtitle">Community-Driven Quantum Mechanics Learning Platform</p>
-                <!-- Resources CTA (new) -->
+
                 <div class="cta-buttons">
-                    <a href="https://quantarax-resources.iblogger.org" class="btn" target="_blank"
-                        rel="noopener noreferrer">Explore Resources</a>
-                    <!-- Updated Join Button Link -->
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScV2PXre2X5sZbm9FHrvCsFDjCJutrOD4cZIh9XULhqzwGO5Q/viewform?usp=dialog"
+                    <a href="/resources" class="btn" target="_blank" rel="noopener noreferrer">Explore Resources</a>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScV2PXre2X5sZbm9FHrvCsFDjCJutrOD4cZIh9XULhqzwGO5Q/viewform"
                         target="_blank" rel="noopener noreferrer" class="btn join-btn">Join Our Community</a>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="content-section">
             <div class="container">
                 <div class="section-header">
                     <div class="section-icon">
-                        <div class="atom-structure">
-                            <div class="nucleus"></div>
-                            <div class="electron-orbit orbit-1"></div>
-                            <div class="electron-orbit orbit-2"></div>
-                            <div class="electron-orbit orbit-3"></div>
-                        </div>
+                        <i data-lucide="atom" class="icon-lg"></i>
                     </div>
                     <h2 class="section-title">About QuantaraX</h2>
                 </div>
@@ -119,21 +113,21 @@
                     <div class="values-grid">
                         <div class="value-card">
                             <div class="value-icon">
-                                <div class="community-icon"></div>
+                                <i data-lucide="users-round"></i>
                             </div>
                             <h3>Community-Driven Learning</h3>
                             <p>Learning happens through peer collaboration and mutual support</p>
                         </div>
                         <div class="value-card">
                             <div class="value-icon">
-                                <div class="forum-icon"></div>
+                                <i data-lucide="message-square"></i>
                             </div>
                             <h3>Forum-Centered Discussions</h3>
                             <p>The heart of our platform where knowledge is shared and built</p>
                         </div>
                         <div class="value-card">
                             <div class="value-icon">
-                                <div class="growth-icon"></div>
+                                <i data-lucide="trending-up"></i>
                             </div>
                             <h3>Self-Directed Growth</h3>
                             <p>Empowering learners to take control of their quantum education journey</p>
@@ -143,20 +137,11 @@
             </div>
         </section>
 
-        <!-- Platform Section -->
         <section id="platform" class="content-section">
             <div class="container">
                 <div class="section-header">
                     <div class="section-icon">
-                        <div class="platform-nodes">
-                            <div class="node active"></div>
-                            <div class="node"></div>
-                            <div class="node active"></div>
-                            <div class="node"></div>
-                            <div class="connection-line line-1"></div>
-                            <div class="connection-line line-2"></div>
-                            <div class="connection-line line-3"></div>
-                        </div>
+                        <i data-lucide="network" class="icon-lg"></i>
                     </div>
                     <h2 class="section-title">Our Platform</h2>
                 </div>
@@ -167,7 +152,7 @@
                     <div class="platform-grid">
                         <div class="platform-card">
                             <div class="platform-icon">
-                                <div class="forum-visualization"></div>
+                                <i data-lucide="messages-square" class="icon-lg"></i>
                             </div>
                             <h3>Interactive Community Forums</h3>
                             <p>The heart of QuantaraX where learning happens through discussion and collaborative
@@ -176,21 +161,21 @@
                     </div>
                     <div class="platform-card">
                         <div class="platform-icon">
-                            <div class="simulation-waves"></div>
+                            <i data-lucide="waves" class="icon-lg"></i>
                         </div>
                         <h3>Community-Driven Simulations</h3>
                         <p>Interactive tools enhanced by community collaboration and shared insights</p>
                     </div>
                     <div class="platform-card">
                         <div class="platform-icon">
-                            <div class="peer-network"></div>
+                            <i data-lucide="library" class="icon-lg"></i>
                         </div>
                         <h3>Peer Learning Resources</h3>
                         <p>Content created by and for the community, fostering shared knowledge growth</p>
                     </div>
                     <div class="platform-card">
                         <div class="platform-icon">
-                            <div class="teaching-structure"></div>
+                            <i data-lucide="school" class="icon-lg"></i>
                         </div>
                         <h3>Specialized Teaching Areas</h3>
                         <p>Focused instruction environments for advanced topics when additional guidance is needed</p>
@@ -200,56 +185,19 @@
             </div>
         </section>
 
-        <!-- Leadership Section -->
-        <section id="leadership" class="content-section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <div class="leadership-constellation">
-                            <div class="leader-star founder"></div>
-                            <div class="leader-star cofounder"></div>
-                            <div class="connection-beam"></div>
-                        </div>
-                    </div>
-                    <h2 class="section-title">Leadership Team</h2>
-                </div>
-                <div class="section-content">
-                    <div class="leadership-grid">
-                        <div class="leader-card">
-                            <div class="leader-avatar">
-                                <div class="avatar-ring"></div>
-                                <div class="avatar-center">MF</div>
-                            </div>
-                            <h3>Muhammad Fareed Raza</h3>
-                            <div class="role-badge">Founder</div>
-                            <p>Community architect dedicated to building collaborative learning environments and
-                                empowering peer-to-peer quantum education</p>
-                        </div>
-                        <div class="leader-card">
-                            <div class="leader-avatar">
-                                <div class="avatar-ring"></div>
-                                <div class="avatar-center">JS</div>
-                            </div>
-                            <h3>Jayesh Singh</h3>
-                            <div class="role-badge">Co-Founder</div>
-                            <p>Plans Advisor, learning support provider as well as technical support (website,
-                                simulations, communities)</p>
-                        </div>
-                    </div>
-                </div>
+        <section class="content-section">
+            <div class="container" style="text-align: center; font-size: larger;">
+                <a href="credits.html" class="btn btn--outline">
+                    <i data-lucide="users" class="icon-lg"></i> Meet Our Leadership Team
+                </a>
             </div>
         </section>
 
-        <!-- Future Initiatives Section -->
         <section id="future" class="content-section">
             <div class="container">
                 <div class="section-header">
                     <div class="section-icon">
-                        <div class="future-portal">
-                            <div class="portal-ring ring-1"></div>
-                            <div class="portal-ring ring-2"></div>
-                            <div class="portal-center"></div>
-                        </div>
+                        <i data-lucide="rocket" class="icon-lg"></i>
                     </div>
                     <h2 class="section-title">Future Initiatives</h2>
                 </div>
@@ -259,21 +207,21 @@
                     <div class="initiatives-grid">
                         <div class="initiative-card">
                             <div class="initiative-icon">
-                                <div class="lab-icon"></div>
+                                <i data-lucide="beaker"></i>
                             </div>
                             <h3>Experimental Virtual Facility</h3>
                             <p>A virtual laboratory space for collaborative quantum experiments and simulations</p>
                         </div>
                         <div class="initiative-card">
                             <div class="initiative-icon">
-                                <div class="journal-icon"></div>
+                                <i data-lucide="book-open"></i>
                             </div>
                             <h3>QuantaraX Scientific Journal</h3>
                             <p>Community-driven publication featuring research and insights from our members</p>
                         </div>
                         <div class="initiative-card">
                             <div class="initiative-icon">
-                                <div class="collaboration-icon"></div>
+                                <i data-lucide="users-2"></i>
                             </div>
                             <h3>Enhanced Collaborative Features</h3>
                             <p>Advanced tools to facilitate deeper community interaction and knowledge sharing</p>
@@ -283,17 +231,11 @@
             </div>
         </section>
 
-        <!-- Join Section -->
         <section id="join" class="content-section">
             <div class="container">
                 <div class="section-header">
                     <div class="section-icon">
-                        <div class="quantum-portal">
-                            <div class="portal-ring ring-1"></div>
-                            <div class="portal-ring ring-2"></div>
-                            <div class="portal-ring ring-3"></div>
-                            <div class="portal-center"></div>
-                        </div>
+                        <i data-lucide="sparkles" class="icon-lg"></i>
                     </div>
                     <h2 class="section-title">Join Our Community</h2>
                 </div>
@@ -301,32 +243,29 @@
                     <p class="content-text">Ready to be part of a collaborative quantum mechanics learning community?
                         QuantaraX is actively growing and accepting new members who are passionate about peer-to-peer
                         learning.</p>
-
                     <div class="contact-info">
                         <div class="contact-card">
                             <div class="contact-icon">
-                                <div class="email-icon"></div>
+                                <i data-lucide="mail"></i>
                             </div>
                             <h3>Get in Touch</h3>
                             <p><strong>Email:</strong> <a
                                     href="mailto:TheQuantaManComm@gmail.com">TheQuantaManComm@gmail.com</a></p>
                             <p><strong>Phone:</strong> <a href="tel:+923156192728">+92 315 6192728</a></p>
-                            <!-- NEW PHONE: add this line -->
-                            <p><strong>Phone:</strong> <a href="tel:+919236537143">+91 92365 37143</a></p>
+
+                            <p><strong>Phone:</strong> <a href="tel:+919236537143">+91 92 365 37143</a></p>
                         </div>
 
-                        <!-- Updated Status Card -->
                         <div class="status-card">
                             <div class="status-icon">
-                                <div class="development-icon"></div>
+                                <i data-lucide="code-2"></i>
                             </div>
                             <h3>Join the Community</h3>
                             <p>We are actively growing our community. Click the link below to join us and start your
                                 quantum journey!</p>
 
-                            <!-- Updated Join Button with Google Form Link -->
                             <a class="status-join"
-                                href="https://docs.google.com/forms/d/e/1FAIpQLScV2PXre2X5sZbm9FHrvCsFDjCJutrOD4cZIh9XULhqzwGO5Q/viewform?usp=dialog"
+                                href="https://docs.google.com/forms/d/e/1FAIpQLScV2PXre2X5sZbm9FHrvCsFDjCJutrOD4cZIh9XULhqzwGO5Q/viewform"
                                 target="_blank" rel="noopener noreferrer"
                                 aria-label="Join our community via Google Form">
                                 Join Now
@@ -338,7 +277,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -356,35 +294,31 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-logos" aria-hidden="false" role="group" aria-label="Partner and resource links">
-                    <!-- Example tributary logos (vector) -->
-                    <a class="footer-logo-link" href="#" aria-label="Partner 1">
-                        <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M3 12h18" fill="none" stroke="currentColor" stroke-width="1.6" />
-                        </svg>
+                <div class="footer-logos">
+                    <a class="footer-logo-link" href="https://www.youtube.com/@quantarax" target="_blank"
+                        aria-label="YouTube">
+                        <i data-lucide="youtube"></i>
                     </a>
-                    <a class="footer-logo-link" href="#" aria-label="Partner 2">
-                        <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6" />
-                        </svg>
+                    <a class="footer-logo-link" href="https://www.instagram.com/quantarax_official" target="_blank"
+                        aria-label="Instagram">
+                        <i data-lucide="instagram"></i>
                     </a>
-                    <a class="footer-logo-link" href="#" aria-label="Partner 3">
-                        <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.6" />
-                        </svg>
+                    <a class="footer-logo-link" href="https://www.linkedin.com/company/quantarax-learning"
+                        target="_blank" aria-label="LinkedIn">
+                        <i data-lucide="linkedin"></i>
                     </a>
                 </div>
-
                 <div class="footer-copyright">
-                    <p>&copy; 2025 QuantaraX — Building the future of quantum education together.</p>
+                    <p>&copy; 2026 QuantaraX — Building the future of quantum education together.</p>
                     <p class="small-note">Tributaries &amp; Resources: QuantaraX community contributors and partnered
                         creators.</p>
                 </div>
-
             </div>
     </footer>
-
     <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>

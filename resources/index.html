@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantaraX Community Blog</title>
+    <!-- ✅ SEO & Meta Optimization for QuantaraX -->
+    <meta name="description"
+        content="Explore QuantaraX – a community dedicated to Quantum Physics, Technology, Innovation, and Education resources. Discover insightful blogs and learning materials.">
+    <meta name="keywords"
+        content="QuantaraX, quantum physics, quantum computing, technology, innovation, education, research blogs, science resources, learning materials">
+    <meta name="author" content="QuantaraX Community">
+    <meta property="og:title" content="QuantaraX Community Blog">
+    <meta property="og:description"
+        content="Join QuantaraX – where science, innovation, and education meet. Read our latest blogs and explore quantum insights.">
+    <meta property="og:image" content="https://cdn.alimad.co/f/static/quantarax.jpeg">
+    <meta property="og:url" content="https://quantarax.alimad.co/resources">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quantarax.alimad.co">
+    <!-- ✅ JSON-LD Schema for Google -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "QuantaraX Community Blog",
+  "url": "https://quantarax.alimad.co/resources",
+  "description": "A hub for quantum physics, innovation, and educational resources.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "QuantaraX Community",
+    "url": "https://quantarax.alimad.co/resources"
+  }
+}
+</script>
+    <link rel="stylesheet" href="style.css">
+    <!-- ✅ Website Favicon / Logo -->
+    <link rel="icon" type="image/png" href="https://cdn.alimad.co/f/static/quantarax.jpeg">
+    <link rel="apple-touch-icon" href="https://cdn.alimad.co/f/static/quantarax.jpeg">
+    <meta name="theme-color" content="#0a0a0a">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Top Header with Search -->
+    <header class="top-header">
+        <div class="container">
+            <a href="../index.html" class="logo" style="text-decoration: none;">QuantaraX-Materials</a>
+            <div style="flex: 1;"></div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search blogs..." class="search-input">
+                <button class="filter-toggle" id="filterToggle" title="Filter">
+                    <i data-lucide="filter"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Filter Panel -->
+    <div class="filter-panel" id="filterPanel">
+        <div class="container">
+            <div class="filter-options">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="quantum-physics">Quantum Physics</button>
+                <button class="filter-btn" data-category="technology">Technology</button>
+                <button class="filter-btn" data-category="innovation">Innovation</button>
+                <button class="filter-btn" data-category="education">Education</button>
+            </div>
+            <select id="sortSelect" class="sort-select">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+            </select>
+        </div>
+    </div>
+    <!-- Blog List Section -->
+    <main class="blog-list">
+        <div class="container">
+            <div id="blogContainer">
+                <!-- BLOG ENTRY 1 - Copy this template to add new blogs -->
+                <!--TO ADD NEW BLOG -->
+                <article class="blog-item quantum-physics" data-category="quantum-physics" data-date="2025-10-24">
+                    <div class="blog-image-container">
+                        <img src="images/quantum-main.jpg" alt="Quantum mechanics" class="blog-image">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Quantum Physics</span>
+                        <h2 class="blog-title">Introduction to QUANTUM MECHANICS</h2>
+                        <p class="blog-description">This is a brief introduction of Quantum mechanics for freshers.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">
+                                <span class="blog-date">
+                                    <i data-lucide="calendar" class="icon-sm"></i>
+                                    Oct 24, 2025
+                                </span>
+                                <span class="blog-read">
+                                    <i data-lucide="clock" class="icon-sm"></i>
+                                    40+ min read
+                                </span>
+                            </div>
+                            <button class="open-btn"
+                                onclick="window.location.href='blog/Quantum_Mechanics.html'">Open</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog-item" data-category="quantum-physics" data-date="2025-11-09">
+                    <div class="blog-image-container">
+                        <img src="images/Quantum1.png" alt="introduction to Quantum physics" class="blog-image">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Quantum Physics</span>
+                        <h2 class="blog-title">Introduction to Quantum Physics</h2>
+                        <p class="blog-description">This blog will help you to start your journey to Quantum physics
+                            with zero knowledge.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">
+                                <span class="blog-date">
+                                    <i data-lucide="calendar" class="icon-sm"></i>
+                                    Nov 9, 2025
+                                </span>
+                                <span class="blog-read">
+                                    <i data-lucide="clock" class="icon-sm"></i>
+                                    10 min read
+                                </span>
+                            </div>
+                            <button class="open-btn" onclick="window.location.href='blog/Quantum1.html'">Open</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog-item" data-category="quantum-physics" data-date="2025-11-09">
+                    <div class="blog-image-container">
+                        <img src="images/roadmap-banner.jpg" alt="introduction to Quantum physics" class="blog-image">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Quantum Physics</span>
+                        <h2 class="blog-title">Stage 1:Guide to Quantum Physics</h2>
+                        <p class="blog-description">This blog is 1<sup>st</sup> stage to start your journey to Quantum
+                            physics.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">
+                                <span class="blog-date">
+                                    <i data-lucide="calendar" class="icon-sm"></i>
+                                    Nov 9, 2025
+                                </span>
+                                <span class="blog-read">
+                                    <i data-lucide="clock" class="icon-sm"></i>
+                                    2 min read
+                                </span>
+                            </div>
+                            <button class="open-btn" onclick="window.location.href='stage-1-roadmap.html'">Open</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <p>No blogs found matching your search.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 QuantaraX Community. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://quantarax.alimad.co">About</a>
+                <a href="https://wa.me/919211626015">Contact</a>
+                <a href="https://chat.whatsapp.com/LbNr7fzXB6vBN60oE3gLiX">Community</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

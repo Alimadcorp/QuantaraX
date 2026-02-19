@@ -2,7 +2,7 @@
 // Removed particle variables
 
 // DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeApp();
 });
 
@@ -15,18 +15,18 @@ function initializeApp() {
     initNavigation();
     initInteractiveElements();
     initContactHandling();
-    
+
     // animateParticles(); // Removed
 }
 
 // Loading Screen Handler
 function handleLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
-    
+
     // Hide loading screen after 3 seconds
     setTimeout(() => {
         loadingScreen.classList.add('hidden');
-        
+
         // Remove from DOM after transition
         setTimeout(() => {
             loadingScreen.remove();
@@ -43,13 +43,13 @@ function triggerEntranceAnimations() {
         heroContent.style.opacity = '0';
         heroContent.style.transform = 'translateY(30px)';
         heroContent.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-        
+
         setTimeout(() => {
             heroContent.style.opacity = '1';
             heroContent.style.transform = 'translateY(0)';
         }, 100);
     }
-    
+
     // Start typing effect for hero subtitle
     initTypingEffect();
 }
@@ -63,30 +63,30 @@ function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     // Note: The .cta-button in the hero is now a link, not a scroll trigger.
     // We only need to handle the nav links.
-    
+
     // Function to scroll to target smoothly
     function scrollToTarget(targetId) {
         const targetSection = document.querySelector(targetId);
         if (targetSection) {
             const navbarHeight = 80; // Fixed navbar height
             const offsetTop = targetSection.offsetTop - navbarHeight;
-            
+
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
             });
         }
     }
-    
+
     // Add event listeners to navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            
+
             const targetId = link.getAttribute('href');
             scrollToTarget(targetId);
-            
+
             // Update active navigation
             updateActiveNav(link);
         });
@@ -105,7 +105,7 @@ function updateActiveNav(activeLink) {
 // Scroll-triggered Animations
 function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.value-card, .platform-card, .leader-card, .initiative-card, .contact-card, .status-card');
-    
+
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -113,18 +113,18 @@ function initScrollAnimations() {
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, { 
+    }, {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
-    
+
     animatedElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
         scrollObserver.observe(element);
     });
-    
+
     // Section titles animation
     const sectionTitles = document.querySelectorAll('.section-title');
     sectionTitles.forEach(title => {
@@ -133,7 +133,7 @@ function initScrollAnimations() {
         title.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
         scrollObserver.observe(title);
     });
-    
+
     // Content text animation
     const contentTexts = document.querySelectorAll('.content-text');
     contentTexts.forEach(text => {
@@ -147,45 +147,68 @@ function initScrollAnimations() {
 // Navigation Scroll Effects
 function initNavigation() {
     const navbar = document.querySelector('.navbar');
-    let lastScrollY = window.scrollY;
-    
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+
+            const icon = mobileToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            if (window.lucide) lucide.createIcons();
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                mobileToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+                if (window.lucide) lucide.createIcons();
+            });
+        });
+    }
+
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        
+
         // Add scrolled class for styling
         if (currentScrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-        
+
         // Update active section based on scroll position
         updateActiveSection();
-        
-        // updateParticleBackground(currentScrollY); // Removed
-        
-        lastScrollY = currentScrollY;
     });
 }
 
 function updateActiveSection() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-    
+
     let current = '';
     let currentIndex = -1;
-    
+
     sections.forEach((section, index) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         const scrollPosition = window.scrollY + 100; // Offset for navbar
-        
+
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
             currentIndex = index;
         }
     });
-    
+
     // Update navigation active state
     navLinks.forEach(link => {
         link.classList.remove('active');
@@ -213,36 +236,36 @@ function initHoverEffects() {
             createRippleEffect(ctaButton);
         });
     }
-    
+
     // Card hover effects
     const cards = document.querySelectorAll('.value-card, .platform-card, .leader-card, .initiative-card, .contact-card, .status-card');
     cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-8px) scale(1.02)';
             createGlowEffect(this);
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
-    
+
     // Navigation link effects
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
+        link.addEventListener('mouseenter', function () {
             createGlowEffect(this);
         });
     });
-    
+
     // Contact links hover effects
     const contactLinks = document.querySelectorAll('.contact-card a');
     contactLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
+        link.addEventListener('mouseenter', function () {
             this.style.textShadow = '0 0 10px rgba(159, 43, 255, 0.5)'; // Updated color
         });
-        
-        link.addEventListener('mouseleave', function() {
+
+        link.addEventListener('mouseleave', function () {
             this.style.textShadow = '';
         });
     });
@@ -258,15 +281,15 @@ function createRippleEffect(element) {
         animation: ripple 0.6s linear;
         pointer-events: none;
     `;
-    
+
     const rect = element.getBoundingClientRect();
     const size = Math.max(rect.width, rect.height);
     ripple.style.width = ripple.style.height = size + 'px';
     ripple.style.left = (rect.width - size) / 2 + 'px';
     ripple.style.top = (rect.height - size) / 2 + 'px';
-    
+
     element.appendChild(ripple);
-    
+
     setTimeout(() => {
         ripple.remove();
     }, 600);
@@ -275,7 +298,7 @@ function createRippleEffect(element) {
 function createGlowEffect(element) {
     const originalBoxShadow = element.style.boxShadow;
     element.style.boxShadow = '0 0 20px rgba(159, 43, 255, 0.4)'; // Updated color
-    
+
     setTimeout(() => {
         element.style.boxShadow = originalBoxShadow;
     }, 300);
@@ -285,16 +308,16 @@ function initClickEffects() {
     // Platform cards click effect
     const platformCards = document.querySelectorAll('.platform-card');
     platformCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             const cardTitle = this.querySelector('h3').textContent;
             showPlatformModal(cardTitle, this.querySelector('p').textContent);
         });
     });
-    
+
     // Initiative cards click effect
     const initiativeCards = document.querySelectorAll('.initiative-card');
     initiativeCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             const cardTitle = this.querySelector('h3').textContent;
             showInitiativeModal(cardTitle, this.querySelector('p').textContent);
         });
@@ -328,7 +351,7 @@ function showModal(title, description, type) {
         transition: opacity 0.3s ease;
         backdrop-filter: blur(10px);
     `;
-    
+
     const modalContent = document.createElement('div');
     modalContent.style.cssText = `
         background: rgba(44, 42, 63, 0.95); /* Updated color */
@@ -342,7 +365,7 @@ function showModal(title, description, type) {
         transition: transform 0.3s ease;
         position: relative;
     `;
-    
+
     modalContent.innerHTML = `
         <div style="color: rgba(159, 43, 255, 0.7); font-size: 14px; margin-bottom: 8px;">${type}</div>
         <h3 style="color: var(--color-primary-purple); margin-bottom: 16px; font-size: 24px;">${title}</h3>
@@ -358,16 +381,16 @@ function showModal(title, description, type) {
             transition: all 0.3s ease;
         ">Close</button>
     `;
-    
+
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
-    
+
     // Animate in
     setTimeout(() => {
         modal.style.opacity = '1';
         modalContent.style.transform = 'scale(1)';
     }, 10);
-    
+
     // Close handlers
     const closeButton = modalContent.querySelector('.close-modal');
     const closeModal = () => {
@@ -375,22 +398,22 @@ function showModal(title, description, type) {
         modalContent.style.transform = 'scale(0.8)';
         setTimeout(() => modal.remove(), 300);
     };
-    
+
     closeButton.addEventListener('click', closeModal);
-    closeButton.addEventListener('mouseenter', function() {
+    closeButton.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-2px)';
         this.style.boxShadow = '0 5px 15px rgba(159, 43, 255, 0.3)'; // Updated color
     });
-    
-    closeButton.addEventListener('mouseleave', function() {
+
+    closeButton.addEventListener('mouseleave', function () {
         this.style.transform = '';
         this.style.boxShadow = '';
     });
-    
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
     });
-    
+
     document.addEventListener('keydown', function escHandler(e) {
         if (e.key === 'Escape') {
             closeModal();
@@ -405,12 +428,12 @@ function initCardAnimations() {
     valueCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
     });
-    
+
     const platformCards = document.querySelectorAll('.platform-card');
     platformCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
     });
-    
+
     const initiativeCards = document.querySelectorAll('.initiative-card');
     initiativeCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
@@ -420,9 +443,9 @@ function initCardAnimations() {
 // Contact Handling
 function initContactHandling() {
     const contactLinks = document.querySelectorAll('a[href^="mailto:"], a[href^="tel:"]');
-    
+
     contactLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             // Add visual feedback
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
@@ -439,7 +462,7 @@ function initTypingEffect() {
         const text = heroSubtitle.textContent;
         heroSubtitle.textContent = '';
         heroSubtitle.style.opacity = '1';
-        
+
         let i = 0;
         const typeWriter = () => {
             if (i < text.length) {
@@ -452,13 +475,13 @@ function initTypingEffect() {
                 cursor.textContent = '|';
                 cursor.style.animation = 'blink 1s infinite';
                 heroSubtitle.appendChild(cursor);
-                
+
                 setTimeout(() => {
                     cursor.remove();
                 }, 3000);
             }
         };
-        
+
         setTimeout(typeWriter, 1000); // Start after 1 second
     }
 }
@@ -511,7 +534,7 @@ function addScrollIndicator() {
     const indicator = document.createElement('div');
     indicator.className = 'scroll-indicator';
     document.body.appendChild(indicator);
-    
+
     window.addEventListener('scroll', () => {
         const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
         indicator.style.transform = `scaleX(${Math.min(scrollPercent / 100, 1)})`;

@@ -104,7 +104,7 @@ function updateActiveNav(activeLink) {
 
 // Scroll-triggered Animations
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.value-card, .platform-card, .leader-card, .initiative-card, .contact-card, .status-card');
+    const animatedElements = document.querySelectorAll('.value-card, .platform-card, .leader-card, .initiative-card, .contact-card, .status-card, .guild-card');
 
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

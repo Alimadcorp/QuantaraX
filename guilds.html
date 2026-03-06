@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="QuantaraX Community Guilds - Collaborative units pushing the boundaries of quantum learning">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilds - QuantaraX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="icon" type="image/png" href="https://cdn.alimad.co/f/static/quantarax.jpeg">
+    <link rel="apple-touch-icon" href="https://cdn.alimad.co/f/static/quantarax.jpeg">
+    <meta name="theme-color" content="#232133">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #232133;
+            --card-bg: #2d2a45;
+            --primary-accent: #a855f7;
+            --secondary-accent: #7c3aed;
+            --text-main: #ffffff;
+            --text-muted: #b4b1cc;
+            --nav-bg: rgba(35, 33, 51, 0.95);
+        }
+
+        .main-content {
+            padding-top: 140px;
+            padding-bottom: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .guilds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .guild-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .guild-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .guild-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(168, 85, 247, 0.1);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-accent);
+        }
+
+        .guild-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        .members-section h4 {
+            color: var(--primary-accent);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .members-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .member-tab {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-section {
+            margin-top: 0.5rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-accent), var(--primary-accent));
+            border-radius: 50px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+            width: 0%;
+        }
+
+        .report-section {
+            margin-top: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .report-title {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: block;
+            opacity: 0.7;
+        }
+
+        .progress-report {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .progress-report h1,
+        .progress-report h2,
+        .progress-report h3 {
+            color: var(--text-main);
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .progress-report p {
+            margin-bottom: 1rem;
+        }
+
+        .progress-report ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .status-container {
+            text-align: center;
+            padding: 6rem;
+            color: var(--text-muted);
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(168, 85, 247, 0.1);
+            border-top: 4px solid var(--primary-accent);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-icon {
+            color: var(--primary-accent);
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(to right, #fff, var(--primary-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive Improvements */
+        @media (max-width: 768px) {
+            .main-content {
+                padding-top: 100px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .guilds-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .guild-card {
+                padding: 1.5rem;
+            }
+
+            .status-container {
+                padding: 3rem 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .brand-text {
+                font-size: 1.1rem;
+            }
+
+            .nav-container {
+                padding: 0 10px;
+            }
+
+            .nav-brand {
+                gap: 5px;
+            }
+
+            .guild-card {
+                padding: 1.25rem;
+            }
+        }
+
+        .nav-brand {
+            gap: 2px;
+            /* Sync with user preference in other files */
+        }
+
+        /* Fix potential overflows in markdown content */
+        .progress-report {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .progress-report pre {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .progress-report table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .progress-report img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading-screen" class="loading-screen">
+        <div class="quantum-loader">
+            <div class="quantum-particle"></div>
+            <div class="quantum-particle"></div>
+            <div class="quantum-particle"></div>
+            <div class="loading-text">
+                <span class="loading-letter">Q</span><span class="loading-letter">u</span><span
+                    class="loading-letter">a</span><span class="loading-letter">n</span><span
+                    class="loading-letter">t</span><span class="loading-letter">a</span><span
+                    class="loading-letter">r</span><span class="loading-letter">a</span><span
+                    class="loading-letter">X</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="quantum-logo">
+                    <div class="orbital-ring"></div>
+                    <div class="orbital-ring"></div>
+                    <div class="core-particle"></div>
+                </div>
+                <span class="brand-text">QuantaraX</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html#about" class="nav-link">
+                    <span class="binary-icon">01</span>About
+                </a>
+                <a href="index.html#platform" class="nav-link">
+                    <span class="binary-icon">02</span>Platform
+                </a>
+                <a href="credits.html" class="nav-link">
+                    <span class="binary-icon">03</span>Credits
+                </a>
+                <a href="guilds.html" class="nav-link active">
+                    <span class="binary-icon">04</span>Projects
+                </a>
+                <a href="index.html#join" class="nav-link">
+                    <span class="binary-icon">05</span>Join
+                </a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="section-header">
+            <h1 class="section-title">Community Guilds</h1>
+            <p class="section-subtitle">Collaborative research units driving innovation through collective quantum
+                intelligence.</p>
+        </section>
+
+        <div id="guilds-container">
+            <div class="status-container">
+                <div class="spinner"></div>
+                <p>Establishing secure connection to the guild database...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content"
+                style="display: flex; justify-content: space-between; align-items: center; padding-top: 4rem; border-top: 1px solid rgba(255,255,255,0.05);">
+                <div class="footer-brand" style="display: flex; align-items: center; gap: 1rem;">
+                    <div class="quantum-logo" style="width: 30px; height: 30px;">
+                        <div class="core-particle"></div>
+                    </div>
+                    <span>QuantaraX</span>
+                </div>
+                <div class="footer-logos">
+                    <a class="footer-logo-link" href="https://www.youtube.com/@quantarax" target="_blank"><i
+                            data-lucide="youtube"></i></a>
+                    <a class="footer-logo-link" href="https://www.instagram.com/quantarax_official" target="_blank"><i
+                            data-lucide="instagram"></i></a>
+                    <a class="footer-logo-link" href="https://www.linkedin.com/company/quantarax-learning"
+                        target="_blank"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom" style="text-align: center; margin-top: 2rem;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 QuantaraX — Building the future of
+                    quantum education together.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Data fetching logic
+        async function fetchGuilds() {
+            const container = document.getElementById('guilds-container');
+            const apiUrl = 'https://alimad.co/api/quantarax/guilds';
+            const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(apiUrl);
+
+            try {
+                const response = await fetch(proxyUrl);
+                if (!response.ok) throw new Error('Quantum entanglement failed');
+                const data = await response.json();
+
+                renderGuilds(data);
+            } catch (error) {
+                console.error('Fetch error:', error);
+                container.innerHTML = `
+                    <div class="status-container">
+                        <i data-lucide="alert-triangle" size="48" style="color: #ef4444; margin-bottom: 1.5rem;"></i>
+                        <p>Connection lost. The quantum field is unstable.</p>
+                        <button onclick="location.reload()" class="btn btn--primary" style="margin-top: 1.5rem;">Retry Connection</button>
+                    </div>
+                `;
+                lucide.createIcons();
+            }
+        }
+
+        function renderGuilds(guilds) {
+            const container = document.getElementById('guilds-container');
+
+            if (!guilds || guilds.length === 0) {
+                container.innerHTML = '<p class="status-container">No guild signatures detected in this sector.</p>';
+                return;
+            }
+
+            let html = '<div class="guilds-grid">';
+
+            guilds.forEach(guild => {
+                const membersHtml = (guild.guildMembers || []).map(member => `<li class="member-tab">${member}</li>`).join('');
+                const progressReportHtml = marked.parse(guild.guildProgressReport || '');
+
+                html += `
+                    <div class="guild-card">
+                        <div class="guild-header">
+                            <div class="guild-icon"><i data-lucide="cpu"></i></div>
+                            <h2 class="guild-name">${guild.guildName}</h2>
+                        </div>
+                        
+                        <div class="members-section">
+                            <h4><i data-lucide="users" size="18"></i> Research Team</h4>
+                            <ul class="members-list">
+                                ${membersHtml}
+                            </ul>
+                        </div>
+
+                        <div class="progress-section">
+                            <div class="progress-label">
+                                <span>Optimization Stage</span>
+                                <span>${guild.guildProgress}%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" data-progress="${guild.guildProgress}"></div>
+                            </div>
+                        </div>
+
+                        <div class="report-section">
+                            <span class="report-title">Mission Intelligence</span>
+                            <div class="progress-report markdown-body">
+                                ${progressReportHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            container.innerHTML = html;
+            lucide.createIcons();
+
+            // Trigger scroll animations for new elements
+            initScrollAnimations();
+
+            // Animate progress bars
+            setTimeout(() => {
+                const fills = document.querySelectorAll('.progress-bar-fill');
+                fills.forEach(fill => {
+                    const progress = fill.getAttribute('data-progress');
+                    fill.style.width = progress + '%';
+                });
+            }, 300);
+        }
+
+        fetchGuilds();
+    </script>
+</body>
+
+</html>

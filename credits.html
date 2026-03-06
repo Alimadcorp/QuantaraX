@@ -37,8 +37,17 @@
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); opacity: 0.5; }
-            50% { transform: translateY(-10px); opacity: 1; }
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
         }
 
         /* Navbar */
@@ -65,7 +74,7 @@
         .nav-brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 2px;
             text-decoration: none;
             color: white;
             font-weight: bold;
@@ -137,7 +146,7 @@
         .leader-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary-accent);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .avatar-box {
@@ -184,7 +193,9 @@
             transition: color 0.3s;
         }
 
-        .footer-logo-link:hover { color: var(--primary-accent); }
+        .footer-logo-link:hover {
+            color: var(--primary-accent);
+        }
     </style>
 </head>
 
@@ -195,7 +206,11 @@
             <div class="quantum-particle"></div>
             <div class="quantum-particle"></div>
             <div class="loading-text">
-                <span class="loading-letter">Q</span><span class="loading-letter">u</span><span class="loading-letter">a</span><span class="loading-letter">n</span><span class="loading-letter">t</span><span class="loading-letter">a</span><span class="loading-letter">r</span><span class="loading-letter">a</span><span class="loading-letter">X</span>
+                <span class="loading-letter">Q</span><span class="loading-letter">u</span><span
+                    class="loading-letter">a</span><span class="loading-letter">n</span><span
+                    class="loading-letter">t</span><span class="loading-letter">a</span><span
+                    class="loading-letter">r</span><span class="loading-letter">a</span><span
+                    class="loading-letter">X</span>
             </div>
         </div>
     </div>
@@ -210,9 +225,26 @@
                 </div>
                 <span class="brand-text">QuantaraX</span>
             </div>
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link"><i data-lucide="home"></i> Home</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html#about" class="nav-link">
+                    <span class="binary-icon">01</span>About
+                </a>
+                <a href="index.html#platform" class="nav-link">
+                    <span class="binary-icon">02</span>Platform
+                </a>
+                <a href="credits.html" class="nav-link active">
+                    <span class="binary-icon">03</span>Credits
+                </a>
+                <a href="guilds.html" class="nav-link">
+                    <span class="binary-icon">04</span>Projects
+                </a>
+                <a href="index.html#join" class="nav-link">
+                    <span class="binary-icon">05</span>Join
+                </a>
             </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
     </nav>
 
@@ -262,31 +294,131 @@
                 <h2 class="section-title">Community & Learning Cell</h2>
             </div>
             <div class="leadership-grid">
-                <div class="leader-card"><div class="avatar-box">SI</div><h3>Syed Ali Imran</h3><div class="role-badge">Resourcer at Community</div></div>
-                <div class="leader-card"><div class="avatar-box">IB</div><h3>Ibrahim Khalid</h3><div class="role-badge">Resourcer at Community</div></div>
-                <div class="leader-card"><div class="avatar-box">AT</div><h3>Abdul Rehman Tahir</h3><div class="role-badge">Resourcer at Community</div></div>
-                <div class="leader-card"><div class="avatar-box">IZ</div><h3>Muhammad Ibrahim Zahid</h3><div class="role-badge">Resourcer at Community</div></div>
-                <div class="leader-card"><div class="avatar-box">AY</div><h3>Ayesha Tariq</h3><div class="role-badge">Resourcer at Community</div></div>
-                <div class="leader-card"><div class="avatar-box">IR</div><h3>Ibraheem Rasool</h3><div class="role-badge">Resourcer at Community</div></div>
-                <div class="leader-card"><div class="avatar-box">MR</div><h3>Muzammil Rana</h3><div class="role-badge">Resourcer at Community</div></div>
-                <div class="leader-card"><div class="avatar-box">SI</div><h3>Syed Ali Imran</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">SK</div><h3>Muhammad Subhan Khan</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">HK</div><h3>M. Haroon khan</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">IZ</div><h3>Muhammad Ibrahim Zahid</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">UM</div><h3>Uvaim Muhammad</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">SG</div><h3>Sundus Gul</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">AY</div><h3>Ayesha Tariq</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">AA</div><h3>Azka Akram</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">AZ</div><h3>Ariba Zaheer</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">MI</div><h3>Muhammad Ibrahim</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">EF</div><h3>Eman Farooq</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">MR</div><h3>Muzammil Rana</h3><div class="role-badge">Designer at Learning</div></div>
-                <div class="leader-card"><div class="avatar-box">JS</div><h3>Jayesh Singh</h3><div class="role-badge">Moderator</div></div>
-                <div class="leader-card"><div class="avatar-box">IB</div><h3>Ibrahim Khalid</h3><div class="role-badge">Moderator</div></div>
-                <div class="leader-card"><div class="avatar-box">UM</div><h3>Uvaim Muhammad</h3><div class="role-badge">Moderator</div></div>
-                <div class="leader-card"><div class="avatar-box">AA</div><h3>Azka Akram</h3><div class="role-badge">Moderator</div></div>
-                <div class="leader-card"><div class="avatar-box">MA</div><h3>Mah Noor Asif</h3><div class="role-badge">Moderator</div></div>
-                <div class="leader-card"><div class="avatar-box">AM</div><h3>Ali Mohtashim</h3><div class="role-badge">Moderator</div></div>
+                <div class="leader-card">
+                    <div class="avatar-box">SI</div>
+                    <h3>Syed Ali Imran</h3>
+                    <div class="role-badge">Resourcer at Community</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">IB</div>
+                    <h3>Ibrahim Khalid</h3>
+                    <div class="role-badge">Resourcer at Community</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AT</div>
+                    <h3>Abdul Rehman Tahir</h3>
+                    <div class="role-badge">Resourcer at Community</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">IZ</div>
+                    <h3>Muhammad Ibrahim Zahid</h3>
+                    <div class="role-badge">Resourcer at Community</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AY</div>
+                    <h3>Ayesha Tariq</h3>
+                    <div class="role-badge">Resourcer at Community</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">IR</div>
+                    <h3>Ibraheem Rasool</h3>
+                    <div class="role-badge">Resourcer at Community</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">MR</div>
+                    <h3>Muzammil Rana</h3>
+                    <div class="role-badge">Resourcer at Community</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">SI</div>
+                    <h3>Syed Ali Imran</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">SK</div>
+                    <h3>Muhammad Subhan Khan</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">HK</div>
+                    <h3>M. Haroon khan</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">IZ</div>
+                    <h3>Muhammad Ibrahim Zahid</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">UM</div>
+                    <h3>Uvaim Muhammad</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">SG</div>
+                    <h3>Sundus Gul</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AY</div>
+                    <h3>Ayesha Tariq</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AA</div>
+                    <h3>Azka Akram</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AZ</div>
+                    <h3>Ariba Zaheer</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">MI</div>
+                    <h3>Muhammad Ibrahim</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">EF</div>
+                    <h3>Eman Farooq</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">MR</div>
+                    <h3>Muzammil Rana</h3>
+                    <div class="role-badge">Designer at Learning</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">JS</div>
+                    <h3>Jayesh Singh</h3>
+                    <div class="role-badge">Moderator</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">IB</div>
+                    <h3>Ibrahim Khalid</h3>
+                    <div class="role-badge">Moderator</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">UM</div>
+                    <h3>Uvaim Muhammad</h3>
+                    <div class="role-badge">Moderator</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AA</div>
+                    <h3>Azka Akram</h3>
+                    <div class="role-badge">Moderator</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">MA</div>
+                    <h3>Mah Noor Asif</h3>
+                    <div class="role-badge">Moderator</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AM</div>
+                    <h3>Ali Mohtashim</h3>
+                    <div class="role-badge">Moderator</div>
+                </div>
             </div>
         </section>
 
@@ -296,22 +428,86 @@
                 <h2 class="section-title">Media & Marketing Cell</h2>
             </div>
             <div class="leadership-grid">
-                <div class="leader-card"><div class="avatar-box">MF</div><h3>Muhammad Fareed Raza</h3><div class="role-badge">Video Editor</div></div>
-                <div class="leader-card"><div class="avatar-box">AM</div><h3>Ali Mohtashim</h3><div class="role-badge">Video Editor</div></div>
-                <div class="leader-card"><div class="avatar-box">AR</div><h3>Abdul Rahman</h3><div class="role-badge">Video Editor</div></div>
-                <div class="leader-card"><div class="avatar-box">SG</div><h3>Sundus Gul</h3><div class="role-badge">Video Editor</div></div>
-                <div class="leader-card"><div class="avatar-box">AZ</div><h3>Ariba Zaheer</h3><div class="role-badge">Video Editor</div></div>
-                <div class="leader-card"><div class="avatar-box">IR</div><h3>Ibraheem Rasool</h3><div class="role-badge">Video Editor</div></div>
-                <div class="leader-card"><div class="avatar-box">MF</div><h3>Muhammad Fareed Raza</h3><div class="role-badge">Graphic Designer</div></div>
-                <div class="leader-card"><div class="avatar-box">AS</div><h3>Ammara Sherazi</h3><div class="role-badge">Graphic Designer</div></div>
-                <div class="leader-card"><div class="avatar-box">AR</div><h3>Abdul Rahman</h3><div class="role-badge">Graphic Designer</div></div>
-                <div class="leader-card"><div class="avatar-box">SG</div><h3>Sundus Gul</h3><div class="role-badge">Graphic Designer</div></div>
-                <div class="leader-card"><div class="avatar-box">MR</div><h3>Muzammil Rana</h3><div class="role-badge">Graphic Designer</div></div>
-                <div class="leader-card"><div class="avatar-box">IR</div><h3>Ibraheem Rasool</h3><div class="role-badge">Graphic Designer</div></div>
-                <div class="leader-card"><div class="avatar-box">UM</div><h3>Uvaim Muhammad</h3><div class="role-badge">Marketer</div></div>
-                <div class="leader-card"><div class="avatar-box">HA</div><h3>Hamza Athar</h3><div class="role-badge">Marketer</div></div>
-                <div class="leader-card"><div class="avatar-box">HA</div><h3>Muhammad Hamdan Ata</h3><div class="role-badge">Marketer</div></div>
-                <div class="leader-card"><div class="avatar-box">AS</div><h3>Ammara Sherazi</h3><div class="role-badge">Content Writer</div></div>
+                <div class="leader-card">
+                    <div class="avatar-box">MF</div>
+                    <h3>Muhammad Fareed Raza</h3>
+                    <div class="role-badge">Video Editor</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AM</div>
+                    <h3>Ali Mohtashim</h3>
+                    <div class="role-badge">Video Editor</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AR</div>
+                    <h3>Abdul Rahman</h3>
+                    <div class="role-badge">Video Editor</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">SG</div>
+                    <h3>Sundus Gul</h3>
+                    <div class="role-badge">Video Editor</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AZ</div>
+                    <h3>Ariba Zaheer</h3>
+                    <div class="role-badge">Video Editor</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">IR</div>
+                    <h3>Ibraheem Rasool</h3>
+                    <div class="role-badge">Video Editor</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">MF</div>
+                    <h3>Muhammad Fareed Raza</h3>
+                    <div class="role-badge">Graphic Designer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AS</div>
+                    <h3>Ammara Sherazi</h3>
+                    <div class="role-badge">Graphic Designer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AR</div>
+                    <h3>Abdul Rahman</h3>
+                    <div class="role-badge">Graphic Designer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">SG</div>
+                    <h3>Sundus Gul</h3>
+                    <div class="role-badge">Graphic Designer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">MR</div>
+                    <h3>Muzammil Rana</h3>
+                    <div class="role-badge">Graphic Designer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">IR</div>
+                    <h3>Ibraheem Rasool</h3>
+                    <div class="role-badge">Graphic Designer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">UM</div>
+                    <h3>Uvaim Muhammad</h3>
+                    <div class="role-badge">Marketer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">HA</div>
+                    <h3>Hamza Athar</h3>
+                    <div class="role-badge">Marketer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">HA</div>
+                    <h3>Muhammad Hamdan Ata</h3>
+                    <div class="role-badge">Marketer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AS</div>
+                    <h3>Ammara Sherazi</h3>
+                    <div class="role-badge">Content Writer</div>
+                </div>
             </div>
         </section>
 
@@ -321,9 +517,21 @@
                 <h2 class="section-title">IT Cell</h2>
             </div>
             <div class="leadership-grid">
-                <div class="leader-card"><div class="avatar-box">AT</div><h3>Abdul Rehman Tahir</h3><div class="role-badge">Web Developer</div></div>
-                <div class="leader-card"><div class="avatar-box">MA</div><h3>Muhammad Ali</h3><div class="role-badge">Web Developer</div></div>
-                <div class="leader-card"><div class="avatar-box">AR</div><h3>Abdul Rahman</h3><div class="role-badge">App Developer</div></div>
+                <div class="leader-card">
+                    <div class="avatar-box">AT</div>
+                    <h3>Abdul Rehman Tahir</h3>
+                    <div class="role-badge">Web Developer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">MA</div>
+                    <h3>Muhammad Ali</h3>
+                    <div class="role-badge">Web Developer</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AR</div>
+                    <h3>Abdul Rahman</h3>
+                    <div class="role-badge">App Developer</div>
+                </div>
             </div>
         </section>
 
@@ -333,15 +541,51 @@
                 <h2 class="section-title">Administrative Department</h2>
             </div>
             <div class="leadership-grid">
-                <div class="leader-card"><div class="avatar-box">MI</div><h3>Muhammad Ibrahim</h3><div class="role-badge">Head Coordinator (Administration)</div></div>
-                <div class="leader-card"><div class="avatar-box">HK</div><h3>M. Haroon khan</h3><div class="role-badge">Documentation Manager</div></div>
-                <div class="leader-card"><div class="avatar-box">AS</div><h3>Ammara Sherazi</h3><div class="role-badge">Documentation Manager</div></div>
-                <div class="leader-card"><div class="avatar-box">HA</div><h3>Hamza Athar</h3><div class="role-badge">Documentation Manager</div></div>
-                <div class="leader-card"><div class="avatar-box">MA</div><h3>Mah Noor Asif</h3><div class="role-badge">Documentation Manager</div></div>
-                <div class="leader-card"><div class="avatar-box">MR</div><h3>Muzammil Rana</h3><div class="role-badge">Documentation Manager</div></div>
-                <div class="leader-card"><div class="avatar-box">MF</div><h3>Muhammad Fareed Raza</h3><div class="role-badge">HR & Jury</div></div>
-                <div class="leader-card"><div class="avatar-box">JS</div><h3>Jayesh Singh</h3><div class="role-badge">Jury</div></div>
-                <div class="leader-card"><div class="avatar-box">SK</div><h3>Muhammad Subhan Khan</h3><div class="role-badge">Supervisor</div></div>
+                <div class="leader-card">
+                    <div class="avatar-box">MI</div>
+                    <h3>Muhammad Ibrahim</h3>
+                    <div class="role-badge">Head Coordinator (Administration)</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">HK</div>
+                    <h3>M. Haroon khan</h3>
+                    <div class="role-badge">Documentation Manager</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">AS</div>
+                    <h3>Ammara Sherazi</h3>
+                    <div class="role-badge">Documentation Manager</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">HA</div>
+                    <h3>Hamza Athar</h3>
+                    <div class="role-badge">Documentation Manager</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">MA</div>
+                    <h3>Mah Noor Asif</h3>
+                    <div class="role-badge">Documentation Manager</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">MR</div>
+                    <h3>Muzammil Rana</h3>
+                    <div class="role-badge">Documentation Manager</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">MF</div>
+                    <h3>Muhammad Fareed Raza</h3>
+                    <div class="role-badge">HR & Jury</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">JS</div>
+                    <h3>Jayesh Singh</h3>
+                    <div class="role-badge">Jury</div>
+                </div>
+                <div class="leader-card">
+                    <div class="avatar-box">SK</div>
+                    <h3>Muhammad Subhan Khan</h3>
+                    <div class="role-badge">Supervisor</div>
+                </div>
             </div>
         </section>
 
@@ -350,9 +594,12 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-logos">
-                <a class="footer-logo-link" href="https://www.youtube.com/@quantarax" target="_blank"><i data-lucide="youtube"></i></a>
-                <a class="footer-logo-link" href="https://www.instagram.com/quantarax_official" target="_blank"><i data-lucide="instagram"></i></a>
-                <a class="footer-logo-link" href="https://www.linkedin.com/company/quantarax-learning" target="_blank"><i data-lucide="linkedin"></i></a>
+                <a class="footer-logo-link" href="https://www.youtube.com/@quantarax" target="_blank"><i
+                        data-lucide="youtube"></i></a>
+                <a class="footer-logo-link" href="https://www.instagram.com/quantarax_official" target="_blank"><i
+                        data-lucide="instagram"></i></a>
+                <a class="footer-logo-link" href="https://www.linkedin.com/company/quantarax-learning"
+                    target="_blank"><i data-lucide="linkedin"></i></a>
             </div>
             <div class="footer-copyright">
                 <p>&copy; 2026 QuantaraX — Building the future of quantum education together.</p>
@@ -360,17 +607,9 @@
         </div>
     </footer>
 
+    <script src="app.js"></script>
     <script>
         lucide.createIcons();
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loading-screen');
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 500);
-            }, 1000);
-        });
     </script>
 </body>
 

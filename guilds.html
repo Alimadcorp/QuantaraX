@@ -444,7 +444,6 @@
                 html += `
                     <div class="guild-card" onclick="openGuildDetail(${index})">
                         <div class="guild-header">
-                            <div class="guild-icon"><i data-lucide="cpu"></i></div>
                             <h2 class="guild-name">${guild.guildName}</h2>
                         </div>
                         
@@ -506,7 +505,6 @@
 
             body.innerHTML = `
                 <div class="guild-header" style="margin-bottom: 2rem;">
-                    <div class="guild-icon"><i data-lucide="cpu"></i></div>
                     <h2 class="guild-title" style="font-size: 2.5rem; margin: 0;">${guild.guildName}</h2>
                 </div>
 
@@ -540,7 +538,6 @@
                         <div class="sidebar-section">
                              <div class="progress-section">
                                 <div class="progress-label">
-                                    <span>Sync Status</span>
                                     <span>${guild.guildProgress}%</span>
                                 </div>
                                 <div class="progress-bar-container">

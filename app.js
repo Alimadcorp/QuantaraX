@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeApp();
 });
 
+// Comment
+
 function initializeApp() {
     // Initialize all components
     handleLoadingScreen();

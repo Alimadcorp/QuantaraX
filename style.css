@@ -156,6 +156,181 @@
   --container-xl: 1280px;
 }
 
+.ended-home {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(201, 136, 255, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 10%, rgba(156, 195, 255, 0.14), transparent 26%),
+    var(--color-dark-bg);
+  color: var(--color-light-text);
+}
+
+.ended-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 20px;
+}
+
+.ended-hero {
+  width: min(920px, 100%);
+  padding: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-base);
+  background: rgba(35, 33, 51, 0.78);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.ended-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+  color: var(--color-light-text);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.ended-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-bottom: 20px;
+  padding: 10px 14px;
+  border: 1px solid rgba(230, 129, 97, 0.42);
+  border-radius: var(--radius-base);
+  background: rgba(230, 129, 97, 0.14);
+  color: #ffd9ca;
+  font-weight: var(--font-weight-semibold);
+}
+
+.ended-status svg,
+.ended-actions svg {
+  width: 18px;
+  height: 18px;
+}
+
+.ended-hero h1 {
+  max-width: 820px;
+  margin: 0;
+  color: var(--color-light-text);
+  font-size: clamp(40px, 7vw, 76px);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.ended-lede {
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: var(--color-light-text);
+  font-size: var(--font-size-xl);
+  line-height: 1.65;
+}
+
+.ended-copy {
+  display: grid;
+  gap: 16px;
+  max-width: 760px;
+  margin-top: 28px;
+  color: var(--color-light-text-secondary);
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+}
+
+.ended-copy p {
+  margin: 0;
+}
+
+.ended-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.ended-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ended-primary {
+  background: linear-gradient(135deg, var(--color-primary-purple), var(--color-primary-blue));
+  color: var(--color-dark-bg);
+}
+
+.ended-secondary {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.archive-site {
+  padding-top: 48px;
+}
+
+.archive-warning {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #3a1f12;
+  color: #fff2dc;
+  border-bottom: 1px solid rgba(255, 214, 170, 0.35);
+  font-size: var(--font-size-base);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.archive-warning strong {
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .ended-page {
+    padding: 28px 14px;
+  }
+
+  .ended-hero {
+    padding: 30px 20px;
+  }
+
+  .ended-brand {
+    margin-bottom: 24px;
+  }
+
+  .ended-lede,
+  .ended-copy {
+    font-size: var(--font-size-lg);
+  }
+
+  .ended-actions {
+    flex-direction: column;
+  }
+
+  .ended-actions a {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .archive-site {
+    padding-top: 76px;
+  }
+
+  .archive-warning {
+    min-height: 76px;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 14px;
+  }
+}
+
 /* Dark mode colors */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -2391,6 +2566,44 @@ html {
 
 .status-join:hover {
   transform: translateY(-3px);
+}
+
+.discord-archive-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.discord-archive-shot {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-base);
+  background: rgba(15, 14, 22, 0.52);
+}
+
+.discord-archive-shot--wide {
+  grid-column: 1 / -1;
+}
+
+.discord-archive-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.discord-archive-shot figcaption {
+  padding: 12px 14px;
+  color: var(--color-light-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.45;
+}
+
+@media (max-width: 760px) {
+  .discord-archive-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Footer logos and layout */

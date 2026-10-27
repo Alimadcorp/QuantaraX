@@ -2,23 +2,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Non-Profit Quantum Physics & Mechanics Community">
-    <meta name="keywords" content="Quantum Physics, Quantum Mechanics, QuantaraX, Education, Science">
+    <meta name="description" content="QuantaraX Archive — Experimental non-profit Quantum Mechanics learning community">
+    <meta name="keywords" content="Quantum Physics, Quantum Mechanics, QuantaraX, Education, Science, Archive">
     <meta name="author" content="QuantaraX Team">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuantaraX</title>
-    <meta property="og:url" content="https://quantarax.alimad.co/">
+    <title>QuantaraX Archive</title>
+    <meta property="og:url" content="https://quantarax.alimad.co/archive.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="QuantaraX">
-    <meta property="og:description" content="Non-Profit Quantum Physics & Mechanics Community">
+    <meta property="og:title" content="QuantaraX Archive">
+    <meta property="og:description" content="QuantaraX was an experimental non-profit organization aimed at developing and testing peer-learning techniques and rediscovery methods of learning in the field of Quantum Mechanics.">
     <meta property="og:image" content="https://cdn.alimad.co/f/static/quantarax.jpeg">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="quantarax.alimad.co">
-    <meta property="twitter:url" content="https://quantarax.alimad.co/">
-    <meta name="twitter:title" content="QuantaraX">
-    <meta name="twitter:description" content="Non-Profit Quantum Physics & Mechanics Community">
+    <meta property="twitter:url" content="https://quantarax.alimad.co/archive.html">
+    <meta name="twitter:title" content="QuantaraX Archive">
+    <meta name="twitter:description" content="QuantaraX was an experimental non-profit organization aimed at developing and testing peer-learning techniques and rediscovery methods of learning in the field of Quantum Mechanics.">
     <meta name="twitter:image" content="https://cdn.alimad.co/f/static/quantarax.jpeg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="animation.css">
@@ -26,6 +25,313 @@
     <link rel="apple-touch-icon" href="https://cdn.alimad.co/f/static/quantarax.jpeg">
     <meta name="theme-color" content="#232133">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .archive-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at 30% 30%, rgba(201, 136, 255, 0.12), transparent 35%),
+                radial-gradient(circle at 70% 70%, rgba(156, 195, 255, 0.10), transparent 35%);
+        }
+
+        .archive-hero-content {
+            text-align: center;
+            max-width: 880px;
+            padding: var(--space-32);
+            position: relative;
+            z-index: 2;
+        }
+
+        .archive-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            border: 1px solid rgba(230, 129, 97, 0.45);
+            border-radius: var(--radius-full);
+            background: rgba(230, 129, 97, 0.12);
+            color: #ffd9ca;
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-24);
+            backdrop-filter: blur(8px);
+        }
+
+        .archive-badge i {
+            width: 16px;
+            height: 16px;
+            color: #ffb38a;
+        }
+
+        .archive-hero h1 {
+            font-size: clamp(42px, 8vw, 80px);
+            font-weight: var(--font-weight-bold);
+            line-height: 1.05;
+            margin: 0 0 var(--space-20) 0;
+            letter-spacing: -0.02em;
+        }
+
+        .archive-hero h1 .quantum-text {
+            background: linear-gradient(45deg, var(--color-primary-purple), var(--color-primary-blue), var(--color-white));
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+
+        .archive-lede {
+            font-size: var(--font-size-xl);
+            line-height: 1.7;
+            color: var(--color-white);
+            margin: 0 0 var(--space-24) 0;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .archive-sunset {
+            max-width: 720px;
+            margin: 0 auto var(--space-32) auto;
+            padding: var(--space-24) var(--space-32);
+            border: 1px solid rgba(var(--color-primary-blue-rgb), 0.3);
+            background: rgba(var(--color-primary-blue-rgb), 0.08);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .archive-sunset p {
+            color: var(--color-primary-blue);
+            font-weight: var(--font-weight-semibold);
+            margin: 0;
+            font-size: var(--font-size-lg);
+            line-height: 1.6;
+        }
+
+        .section-title-archive {
+            font-size: var(--font-size-3xl);
+            color: var(--color-white);
+            text-align: center;
+            margin-bottom: var(--space-16);
+            letter-spacing: -0.01em;
+        }
+
+        .section-subtitle-archive {
+            color: var(--color-light-text-secondary);
+            text-align: center;
+            font-size: var(--font-size-lg);
+            line-height: 1.7;
+            max-width: 720px;
+            margin: 0 auto var(--space-40) auto;
+            opacity: 0.9;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-24);
+            margin-bottom: var(--space-48);
+        }
+
+        .achievement-card {
+            background: rgba(var(--color-dark-surface-rgb), 0.5) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(var(--color-primary-purple-rgb), 0.1) !important;
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--color-primary-purple), var(--color-primary-blue));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .achievement-card:hover::before {
+            opacity: 1;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(var(--color-primary-purple-rgb), 0.4) !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 15px rgba(var(--color-primary-purple-rgb), 0.1);
+        }
+
+        .achievement-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--color-primary-purple), var(--color-primary-blue));
+            color: var(--color-dark-bg);
+            border-radius: var(--radius-base);
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-16);
+            box-shadow: 0 0 15px rgba(var(--color-primary-purple-rgb), 0.4);
+        }
+
+        .achievement-card h3 {
+            font-size: var(--font-size-xl);
+            color: var(--color-white);
+            margin: 0 0 var(--space-12) 0;
+        }
+
+        .achievement-card p {
+            color: var(--color-white);
+            opacity: 0.85;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: var(--space-24);
+            margin-bottom: var(--space-48);
+        }
+
+        .project-card {
+            background: rgba(var(--color-dark-surface-rgb), 0.5) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(var(--color-primary-purple-rgb), 0.1) !important;
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(var(--color-primary-purple-rgb), 0.4) !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 15px rgba(var(--color-primary-purple-rgb), 0.1);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-16);
+            margin-bottom: var(--space-16);
+        }
+
+        .project-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(var(--color-primary-purple-rgb), 0.1);
+            border-radius: var(--radius-md);
+            flex-shrink: 0;
+        }
+
+        .project-icon i {
+            width: 28px;
+            height: 28px;
+            color: var(--color-primary-purple);
+        }
+
+        .project-info h3 {
+            font-size: var(--font-size-xl);
+            color: var(--color-white);
+            margin: 0 0 var(--space-8) 0;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--color-primary-blue);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-sm);
+            margin-top: 4px;
+        }
+
+        .project-link:hover {
+            color: var(--color-primary-purple);
+            text-decoration: underline;
+        }
+
+        .project-card p {
+            color: var(--color-white);
+            opacity: 0.85;
+            line-height: 1.7;
+            margin: 0 0 var(--space-20) 0;
+            flex: 1;
+        }
+
+        .project-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border: 1px solid rgba(var(--color-primary-purple-rgb), 0.3);
+            border-radius: var(--radius-full);
+            background: rgba(var(--color-primary-purple-rgb), 0.08);
+            color: var(--color-primary-purple);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-medium);
+            margin-top: auto;
+        }
+
+        .archive-cta {
+            text-align: center;
+            padding: var(--space-48) var(--space-32);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .archive-cta h2 {
+            font-size: var(--font-size-3xl);
+            color: var(--color-white);
+            margin-bottom: var(--space-16);
+        }
+
+        .archive-cta p {
+            color: var(--color-light-text-secondary);
+            font-size: var(--font-size-lg);
+            line-height: 1.7;
+            margin-bottom: var(--space-32);
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-16);
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 640px) {
+            .archive-hero h1 {
+                font-size: 32px;
+            }
+
+            .achievements-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body class="archive-site">
@@ -34,24 +340,6 @@
         QuantaraX was an experiment, and the experiment has ended. This is a static archive of the original website.
     </div>
 
-    <div id="loading-screen" class="loading-screen">
-        <div class="quantum-loader">
-            <div class="quantum-particle"></div>
-            <div class="quantum-particle"></div>
-            <div class="quantum-particle"></div>
-            <div class="loading-text">
-                <span class="loading-letter">Q</span>
-                <span class="loading-letter">u</span>
-                <span class="loading-letter">a</span>
-                <span class="loading-letter">n</span>
-                <span class="loading-letter">t</span>
-                <span class="loading-letter">a</span>
-                <span class="loading-letter">r</span>
-                <span class="loading-letter">a</span>
-                <span class="loading-letter">X</span>
-            </div>
-        </div>
-    </div>
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
@@ -85,216 +373,177 @@
         </div>
     </nav>
 
+    <div id="loading-screen" class="loading-screen">
+        <div class="quantum-loader">
+            <div class="quantum-particle"></div>
+            <div class="quantum-particle"></div>
+            <div class="quantum-particle"></div>
+            <div class="loading-text">
+                <span class="loading-letter">Q</span>
+                <span class="loading-letter">u</span>
+                <span class="loading-letter">a</span>
+                <span class="loading-letter">n</span>
+                <span class="loading-letter">t</span>
+                <span class="loading-letter">a</span>
+                <span class="loading-letter">r</span>
+                <span class="loading-letter">a</span>
+                <span class="loading-letter">X</span>
+            </div>
+        </div>
+    </div>
+
     <main class="main-content">
 
-        <section class="hero-section">
-            <div class="hero-content">
+        <section class="archive-hero" id="about">
+            <div class="archive-hero-content">
+                <div class="archive-badge">
+                    <i data-lucide="archive"></i>
+                    Static Archive
+                </div>
                 <h1 class="hero-title">
                     <span class="quantum-text">QuantaraX</span>
-                    <div class="title-effect"></div>
                 </h1>
-                <p class="hero-subtitle">Community-Driven Quantum Mechanics Learning Platform</p>
-
-                <div class="cta-buttons">
-                    <a href="/resources" class="btn" target="_blank" rel="noopener noreferrer">Explore Resources</a>
-                    <a href="#join" class="btn join-btn">View Our Deprecated Discord Community</a>
+                <p class="archive-lede">
+                    QuantaraX was an experimental non-profit organization aimed at developing and testing peer-learning
+                    techniques and rediscovery methods of learning in the field of Quantum Mechanics.
+                </p>
+                <div class="archive-sunset">
+                    <p>QuantaraX has been sunset in its current form, but the mission continues through other channels.</p>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="content-section">
+        <section class="content-section" id="achievements">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-icon">
-                        <i data-lucide="atom" class="icon-lg"></i>
-                    </div>
-                    <h2 class="section-title">About QuantaraX</h2>
+                    <h2 class="section-title-archive">Our Achievements</h2>
+                    <p class="section-subtitle-archive">
+                        What QuantaraX accomplished during its experimental run as a community-driven quantum education
+                        initiative.
+                    </p>
                 </div>
-                <div class="section-content">
-                    <p class="content-text">Creating a vibrant, community-driven platform where quantum mechanics
-                        enthusiasts learn collaboratively and support each other's growth. Our vision is to establish
-                        QuantaraX as the world's premier community-driven quantum mechanics learning platform.</p>
-                    <div class="values-grid">
-                        <div class="value-card">
-                            <div class="value-icon">
-                                <i data-lucide="users-round"></i>
-                            </div>
-                            <h3>Community-Driven Learning</h3>
-                            <p>Learning happens through peer collaboration and mutual support</p>
-                        </div>
-                        <div class="value-card">
-                            <div class="value-icon">
-                                <i data-lucide="message-square"></i>
-                            </div>
-                            <h3>Forum-Centered Discussions</h3>
-                            <p>The heart of our platform where knowledge is shared and built</p>
-                        </div>
-                        <div class="value-card">
-                            <div class="value-icon">
-                                <i data-lucide="trending-up"></i>
-                            </div>
-                            <h3>Self-Directed Growth</h3>
-                            <p>Empowering learners to take control of their quantum education journey</p>
-                        </div>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-number">01</div>
+                        <h3>15+ QM &amp; Rediscovery Sessions</h3>
+                        <p>Organized fifteen plus quantum mechanics and rediscovery sessions, both online and in-person,
+                            bringing learners together to explore quantum concepts collaboratively.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">02</div>
+                        <h3>ReDiscovery Method (Grade 11)</h3>
+                        <p>Developed and tested ReDiscovery Method techniques on Grade 11th students in Pakistan. Reports
+                            prepared for release to support others in adopting the method.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">03</div>
+                        <h3>QM Discord Community</h3>
+                        <p>Created the second largest Discord community dedicated to Quantum Mechanics, with over 100
+                            members. The community continues to exist today.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">04</div>
+                        <h3>Particle Physics Game Prototype</h3>
+                        <p>Created the first ever particle physics game based on the rediscovery method as a working
+                            prototype.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">05</div>
+                        <h3>Data &amp; Experience Sharing</h3>
+                        <p>Provided data and experience sharing to various Pakistani organizations for their upcoming
+                            projects related to the Rediscovery method.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="platform" class="content-section">
+        <section class="content-section" id="projects">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-icon">
-                        <i data-lucide="network" class="icon-lg"></i>
-                    </div>
-                    <h2 class="section-title">Our Platform</h2>
+                    <h2 class="section-title-archive">Our Projects</h2>
+                    <p class="section-subtitle-archive">
+                        Initiatives that carried QuantaraX's rediscovery methods forward into games, olympiads, and
+                        textbooks.
+                    </p>
                 </div>
-                <div class="section-content">
-                    <p class="content-text">Experience quantum mechanics learning through collaborative forums,
-                        community-driven simulations, and peer-to-peer knowledge sharing in our specialized teaching
-                        environments.</p>
-                    <div class="platform-grid">
-                        <div class="platform-card">
-                            <div class="platform-icon">
-                                <i data-lucide="messages-square" class="icon-lg"></i>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i data-lucide="gamepad-2"></i>
                             </div>
-                            <h3>Interactive Community Forums</h3>
-                            <p>The heart of QuantaraX where learning happens through discussion and collaborative
-                                problem-solving</p>
+                            <div>
+                                <h3>Particle Duel Game</h3>
+                                <a href="https://particleduel.vercel.app" class="project-link" target="_blank"
+                                    rel="noopener noreferrer">particleduel.vercel.app <i data-lucide="external-link"
+                                        class="icon-sm"></i></a>
+                            </div>
                         </div>
+                        <p>The first ever particle physics game built on rediscovery-based learning principles.</p>
+                        <div class="project-tag">Rediscovery Game</div>
                     </div>
-                    <div class="platform-card">
-                        <div class="platform-icon">
-                            <i data-lucide="waves" class="icon-lg"></i>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i data-lucide="award"></i>
+                            </div>
+                            <div>
+                                <h3>Lumen Physics &amp; Mathematics Olympiad</h3>
+                                <div class="project-link">Launched this year</div>
+                            </div>
                         </div>
-                        <h3>Community-Driven Simulations</h3>
-                        <p>Interactive tools enhanced by community collaboration and shared insights</p>
+                        <p>An olympiad aimed at reaching global audiences. QuantaraX's developed Rediscovery methods were
+                            implemented to prepare students for their physics exam, and results will help test the
+                            effectiveness of those techniques.</p>
+                        <div class="project-tag">QuantaraX Methods Implemented</div>
                     </div>
-                    <div class="platform-card">
-                        <div class="platform-icon">
-                            <i data-lucide="library" class="icon-lg"></i>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i data-lucide="graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h3>All Pakistan Salam Mathematics Olympiad</h3>
+                                <div class="project-link">Government College University, Lahore</div>
+                            </div>
                         </div>
-                        <h3>Peer Learning Resources</h3>
-                        <p>Content created by and for the community, fostering shared knowledge growth</p>
+                        <p>The first-in-the-field rediscovery-based mathematics olympiad at Dr. Salam Society of
+                            Mathematics, Government College University Lahore. QuantaraX's Rediscovery methods guided the
+                            whole paper, and a theorem was discovered at the end.</p>
+                        <div class="project-tag">QuantaraX Methods Implemented</div>
                     </div>
-                    <div class="platform-card">
-                        <div class="platform-icon">
-                            <i data-lucide="school" class="icon-lg"></i>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i data-lucide="book-open"></i>
+                            </div>
+                            <div>
+                                <h3>Class 11th Physics Textbook</h3>
+                                <div class="project-link">Dr. Samar Mubarakmand Society for Physics</div>
+                            </div>
                         </div>
-                        <h3>Specialized Teaching Areas</h3>
-                        <p>Focused instruction environments for advanced topics when additional guidance is needed</p>
+                        <p>QuantaraX's Rediscovery method was used to design the textbook for Class 11th Physics by Dr.
+                            Samar Mubarakmand Society for Physics at the prestigious Government College University.</p>
+                        <div class="project-tag">QuantaraX Methods Implemented</div>
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="container" style="text-align: center; font-size: larger;">
-                <a href="credits.html" class="btn btn--outline">
-                    <i data-lucide="users" class="icon-lg"></i> Meet Our Leadership Team
+        <section class="archive-cta" id="join">
+            <h2>The Mission Continues</h2>
+            <p>QuantaraX may be sunset in its current form, but the work of advancing peer-learning and rediscovery
+                methods lives on through the projects and communities above.</p>
+            <div class="cta-group">
+                <a href="mailto:TheQuantaManComm@gmail.com" class="btn btn--primary">
+                    <i data-lucide="mail"></i> Get in Touch
+                </a>
+                <a href="guilds.html" class="btn btn--outline">
+                    <i data-lucide="code-2"></i> View Projects
                 </a>
             </div>
         </section>
 
-        <section id="future" class="content-section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <i data-lucide="rocket" class="icon-lg"></i>
-                    </div>
-                    <h2 class="section-title">Future Initiatives</h2>
-                </div>
-                <div class="section-content">
-                    <p class="content-text">Our roadmap includes exciting developments to enhance the community learning
-                        experience and expand collaborative opportunities.</p>
-                    <div class="initiatives-grid">
-                        <div class="initiative-card">
-                            <div class="initiative-icon">
-                                <i data-lucide="beaker"></i>
-                            </div>
-                            <h3>Experimental Virtual Facility</h3>
-                            <p>A virtual laboratory space for collaborative quantum experiments and simulations</p>
-                        </div>
-                        <div class="initiative-card">
-                            <div class="initiative-icon">
-                                <i data-lucide="book-open"></i>
-                            </div>
-                            <h3>QuantaraX Scientific Journal</h3>
-                            <p>Community-driven publication featuring research and insights from our members</p>
-                        </div>
-                        <div class="initiative-card">
-                            <div class="initiative-icon">
-                                <i data-lucide="users-2"></i>
-                            </div>
-                            <h3>Enhanced Collaborative Features</h3>
-                            <p>Advanced tools to facilitate deeper community interaction and knowledge sharing</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="join" class="content-section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <i data-lucide="sparkles" class="icon-lg"></i>
-                    </div>
-                    <h2 class="section-title">Deprecated Discord Community</h2>
-                </div>
-                <div class="section-content">
-                    <p class="content-text">QuantaraX is no longer active, and the Discord community is deprecated.
-                        The screenshots and references from that server are retained as part of the archive, showing how
-                        members shared study help, quantum discussions, guild channels, and experiment notes.</p>
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i data-lucide="mail"></i>
-                            </div>
-                            <h3>Get in Touch</h3>
-                            <p><strong>Email:</strong> <a
-                                    href="mailto:TheQuantaManComm@gmail.com">TheQuantaManComm@gmail.com</a></p>
-                            <p><strong>Phone:</strong> <a href="tel:+923194231303">+92 319 4231303</a></p>
-
-                            <p><strong>Phone:</strong> <a href="tel:+919236537143">+91 92 365 37143</a></p>
-                        </div>
-
-                        <div class="status-card">
-                            <div class="status-icon">
-                                <i data-lucide="archive"></i>
-                            </div>
-                            <h3>View Our Deprecated Discord Community</h3>
-                            <p>The Discord server is preserved only as historical context for the QuantaraX experiment.
-                                Channels such as study help, quantum physics chat, ideas hub, and the guild system are
-                                no longer active community spaces.</p>
-
-                            <a class="status-join" href="#discord-archive"
-                                aria-label="View deprecated Discord community screenshots">
-                                Deprecated Community Archive
-                            </a>
-                        </div>
-                    </div>
-                    <div id="discord-archive" class="discord-archive-gallery" aria-label="Deprecated Discord archive screenshots">
-                        <figure class="discord-archive-shot discord-archive-shot--wide">
-                            <img src="resources/images/discord-archive/study-help.png"
-                                alt="Archived QuantaraX Discord study-help channel showing quantum resource posts">
-                            <figcaption>Study help channel with shared quantum mechanics resources.</figcaption>
-                        </figure>
-                        <figure class="discord-archive-shot">
-                            <img src="resources/images/discord-archive/guild-system.png"
-                                alt="Archived QuantaraX Discord guild system channels">
-                            <figcaption>Quantum guild system channels from the deprecated Discord.</figcaption>
-                        </figure>
-                        <figure class="discord-archive-shot">
-                            <img src="resources/images/discord-archive/members-count.png"
-                                alt="Archived QuantaraX Discord member count showing 99 members">
-                            <figcaption>Archived member count from the community experiment.</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">
@@ -309,7 +558,7 @@
                     <span>QuantaraX</span>
                 </div>
                 <div class="footer-info">
-                    <p>Community-Driven Quantum Mechanics Learning Platform</p>
+                    <p>Experimental Non-Profit Quantum Mechanics Learning Community</p>
                     <p>Founded 2025 • Pakistan</p>
                 </div>
             </div>
@@ -317,24 +566,26 @@
                 <div class="footer-logos">
                     <a class="footer-logo-link" href="https://www.youtube.com/@quantarax" target="_blank"
                         aria-label="YouTube">
-                        <i data-lucide="youtube"></i>
+                        <i data-lucide="youtube" class="footer-logo"></i>
                     </a>
                     <a class="footer-logo-link" href="https://www.instagram.com/quantarax_official" target="_blank"
                         aria-label="Instagram">
-                        <i data-lucide="instagram"></i>
+                        <i data-lucide="instagram" class="footer-logo"></i>
                     </a>
                     <a class="footer-logo-link" href="https://www.linkedin.com/company/quantarax-learning"
                         target="_blank" aria-label="LinkedIn">
-                        <i data-lucide="linkedin"></i>
+                        <i data-lucide="linkedin" class="footer-logo"></i>
                     </a>
                 </div>
                 <div class="footer-copyright">
-                    <p>&copy; 2026 QuantaraX — Building the future of quantum education together.</p>
+                    <p>&copy; 2026 QuantaraX — Archive of the quantum education experiment.</p>
                     <p class="small-note">Tributaries &amp; Resources: QuantaraX community contributors and partnered
                         creators.</p>
                 </div>
             </div>
+        </div>
     </footer>
+
     <script src="app.js"></script>
     <script>
         lucide.createIcons();
